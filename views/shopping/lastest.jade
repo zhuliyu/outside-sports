@@ -1,0 +1,23 @@
+extend shopping-layout
+block content
+    link(rel='stylesheet',href="/stylesheets/shopping/lastest.css")
+    div.shopping-lastest-container
+        div.shopping-lastest-title
+            div.lastest-title-items.first 最新
+                img.sort(src="/images/shopping/sort_down_orange.png" align="top")
+            div.lastest-title-items.second 金额
+                img.sort(src="/images/shopping/sort_normal.png" align="top")
+            div.lastest-title-items.third 销量
+                img.sort(src="/images/shopping/sort_down.png" align="top")
+        div.shopping-lastest-content
+            each val in productions
+                a(href=val.production_url)
+                    div.production-container
+                        div.production-container-left
+                            img(src=val.production_imgUrl)
+                        div.production-container-right
+                            p.product-title= val.production_title
+                            p.product-price ¥
+                                span= parseFloat(val.production_price).toFixed()
+        div.shopping-lastest-loadMore 点击加载更多
+    script(src="/javascripts/shopping/lastest.js")

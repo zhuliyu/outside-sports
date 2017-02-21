@@ -1,0 +1,145 @@
+doctype html
+html
+    head
+        title= title
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Cache-Control" content="max-age=0")
+        meta(name="HandheldFriendly" content="true")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="app-mobile-web-app-capable" content="yes")
+        link(rel='stylesheet',href="/stylesheets/shopping/production-detail.css")
+        script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+        script(src="/javascripts/swipe.js")
+        style.
+            .swipe {
+                overflow: hidden;
+                visibility: hidden;
+                position: relative;
+            }
+            .swipe-wrap {
+                overflow: hidden;
+                position: relative;
+            }
+            .swipe-wrap > figure {
+                float: left;
+                width: 100%;
+                position: relative;
+            }
+            #slider {
+                max-width: 650px; /* 设置最大的宽度 */
+                margin: 0px auto; /* 居中对齐 */
+            }
+            figure {
+                margin: 0; /* 对齐，四周宽度都为0，在轮播的时候，以整张图片进行移动 */
+                position: relative;
+            }
+            figure img{
+                width: 100%;
+            }
+            .shopping-detail-intro img{
+                width: 100%;
+                margin-top: -4px;
+            }
+            .current-page{
+                position: absolute;
+                bottom: 10px;
+                color: orange;
+                left: 10px;
+            }
+            .tooltips {
+                width: 200px;
+                margin: auto;
+                /*border-radius: 6px;*/
+                height: 30px;
+                background-color: rgba(0, 0, 0, 0.72);
+                color: white;
+                position: fixed;
+                z-index: 120;
+                left: 0;
+                right: 0;
+                bottom: 60px;
+                text-align: center;
+                line-height: 30px;
+                font-size: 14px;
+                opacity: 0;
+            }
+    body
+        div.shopping-detail-container
+            div.shopping-detail-modal
+                div.fixed-bottom
+                    div.modal-production-detail-container
+                        div.modal-production-detail
+                            div.modal-production-detail-items.first
+                                img(src=introduction.production_imgUrl)
+                            div.modal-production-detail-items.second
+                                p.name=introduction.production_title
+                                p.price=parseFloat(introduction.production_price).toFixed(2)+'元'
+                        div.modal-production-guige 规格<br/>
+                            each val in introduction.styles
+                                if(val.amounts==0)
+                                    li.useless(data-price=val.price disabled)=val.appearance
+                                else
+                                    li.useful(data-price=val.price)=val.appearance
+                        div.modal-production-amount 数量<br/>
+                            div.empty
+                            input.minus(type="button" value="-")
+                            input.number(type="number" value="1")
+                            input.and(type="button" value="+")
+                        div.modal-production-total-price 共计:&nbsp;
+                            span ¥&nbsp;
+                            span.total-price 0.00
+                        div.empty1
+                    input.btn(type="button" value="预计明日发货 | 加入购物车")
+            div#slider.swipe(style="visibility:visible")
+                div.swipe-wrap
+                    each value,index in introduction.imgUrl
+                        figure
+                            img(src=value)
+                            p.current-page=(index+1)+'/'+introduction.imgUrl.length
+            div.shopping-detail-title
+                p.name=introduction.production_title
+                p.price=parseFloat(introduction.production_price).toFixed(2)+'元'
+                p.kuaidi
+                    span 快递:包邮
+                    span.kuaidi_address 发货地:上海
+            a(href="/shopping")
+                div.shopping-detail-to-home-container
+                    span
+                        img(src="/images/shopping/shopmall.png" align="top")
+                        | &nbsp;&nbsp;店铺:绿野仙踪
+                    span.go-to-home 进入店铺&nbsp;&nbsp;
+                        img(src="/images/shopping/right.png" align="top")
+            div.shopping-detail-intro(data-intro=introduction.production_introduction)
+                div.shopping-detail-intro-top 产品介绍
+                p.fahuoriqi 顺丰快递,下单后两个工作日内上海发货
+                div.intro-content
+            div.tooltips 请至少选择一个商品
+            div.shopping-detail-bottom
+                div.shopping-deteil-bottom-items.home
+                    a(href="/shopping")
+                        img(src="/images/shopping/shopping-home.png")
+                div.shopping-deteil-bottom-items.shopping-cart
+                    a(href="/shopping/cart")
+                        img(src="/images/shopping/cart.png")
+                div.shopping-deteil-bottom-items.addCart 加入购物车
+                div.shopping-deteil-bottom-items.bought 立即购买
+        script(src="/javascripts/shopping/production-detail.js")
+        script.
+            var slider =
+                    Swipe(document.getElementById('slider'), {
+                        auto: 3000,
+                        continuous: true,
+                        callback: function (pos) {
+                        }
+                    });
+            $(function(){
+                let append_in=$('.shopping-detail-intro')[0].dataset.intro;
+                $('.intro-content').append(append_in);
+            })
+
+
+
+
+
+

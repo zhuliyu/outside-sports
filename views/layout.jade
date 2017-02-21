@@ -1,0 +1,71 @@
+doctype html
+html
+  head
+    title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel='stylesheet',href="/stylesheets/layout.css")
+    link(rel='stylesheet', href='http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css')
+    link(rel='stylesheet', href='http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css')
+    script(src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js")
+    script(src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js")
+  body
+    div.up-header
+      ul
+        li
+          a(href="javascript:void(0)") 北京
+        li
+          a(href="javascript:void(0)") 上海
+        li
+          a(href="javascript:void(0)") 扬州
+        li
+          a(href="javascript:void(0)") 南京
+        li.register
+          a(href="javascript:void(0)") 注册
+        li.login
+          a(href="javascript:void(0)") 登录
+    nav.navbar.navbar-default.headerbar(role="navigation")
+      div.container-fluid
+        div.row
+          div.col-lg-2.col-md-2
+          div.col-lg-9.col-md-9.col-sm-12.col-xs-12.text-center
+            div.col-lg-1.col-md-1
+              div.navbar-header
+                button.navbar-toggle.collapsed(type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1")
+                  span.sr-only
+                  span.icon-bar
+                  span.icon-bar
+                a.navbar-brand.logo(href="/xianzong")
+                  img(src="/images/cute1.png")
+            div.col-lg-11.col-md-11
+              div#bs-example-navbar-collapse-1.collapse.navbar-collapse
+                div.col-lg-7.col-md-6.col-sm-6.col-xs-12.text-center
+                  ul.nav.navbar-nav.compare
+                    li
+                      a(href="#") 首页
+                    li
+                      a(href="#") 开启冒险
+                    li
+                      a(href="#") 冒险者工会
+                div.col-lg-5.col-md-6.nav-search.text-center
+                  form.navbar-form.navbar-left(role="search")
+                    div.form-group
+                      input(type="text" placeholder="搜索你感兴趣的内容")
+                      button.btn(type="submit")
+                        img(src="/images/search.png")
+          div.col-lg-1.col-md-1
+    block content
+    div.bottom
+      | © 2016－2030 douban.com, all rights reserved 上海小黄人逗比公司
+      ul
+        li
+          a(href="javascript:void(0)") 关于仙踪
+        li
+          a(href="javascript:void(0)") 免责声明
+        li
+          a(href="javascript:void(0)") 联系我们
+        li
+          a(href="javascript:void(0)") 帮助中心
+  script(src="/javascripts/layout.js")
+
+
+

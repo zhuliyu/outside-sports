@@ -1,0 +1,55 @@
+extend shopping-layout
+block content
+    link(rel='stylesheet',href="/stylesheets/shopping/shopping-orders.css")
+    script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    div.shopping-orders-container
+        div.shopping-orders-top-container
+            div#type0.shopping-orders-top-items.active 全部
+            div#type1.shopping-orders-top-items 待付款
+            div#type2.shopping-orders-top-items 待发货
+            div#type3.shopping-orders-top-items 待收货
+            div#type4.shopping-orders-top-items 已完成
+        div.shopping-orders-list-container
+            if(result.length)
+                each val in result
+                    div.shopping-orders
+                        div.shopping-orders-top
+                            span 下单时间 : &nbsp;
+                                span=val.order_date
+                            if(val.order_type == '1')
+                                span.name 待付款
+                            else if(val.order_type == '2')
+                                span.name 待发货
+                            else if(val.order_type == '3')
+                                span.name 待收货
+                            else if(val.order_type == '4')
+                                span.name 已完成
+                        div.shopping-orders-middle
+                            div.shopping-orders-middle-items.first
+                                img(src=val.production_information.production_imgUrl)
+                            div.shopping-orders-middle-items.second
+                                span=val.production_information.production_title
+                        div.shopping-orders-bottom 合计 : &nbsp;
+                            span='¥' + parseFloat(val.order_price).toFixed(2)
+                            div.operation-container
+                                if(val.order_type == '1')
+                                    span.cancel-order 取消订单
+                                    | &nbsp;
+                                    span.quick-pay 立即支付
+                                else if(val.order_type == '2')
+                                    span.call-order 提醒发货
+                                    | &nbsp;
+                                    span.apply-tuihuo 申请退货
+                                else if(val.order_type == '3')
+                                    span.observe-wuliu 查看物流
+                                    | &nbsp;
+                                    span.confirm-get 确认收货
+                                else if(val.order_type == '4')
+                                    span.delete-order 删除订单
+            else
+                div.null
+                    img(src="/images/shopping/order.png")
+                    p 没有订单
+        div.empty
+        div.tooltips 请至少选择一个商品
+    script(src="/javascripts/shopping/shopping-orders.js")

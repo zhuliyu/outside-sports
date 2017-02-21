@@ -1,0 +1,29 @@
+extend layout
+
+block content
+    link(rel='stylesheet',href="/stylesheets/login.css")
+    div.login-container
+        form#login-form
+            ul
+                li
+                    p.login-text
+                        img(src="/images/cute1.png")
+                        | 登录
+                li
+                    p.phone 用户:
+                        input(type="telephone" placeholder="手机号" name="telephone" required="true")
+                li
+                    p.password 密码:
+                        input(type="password" placeholder="密码" name="password" required="true")
+                li
+                    p.login-button
+                        img(src="/images/login1.png",type="submit")
+                li
+                    p.login-register
+                        a(href='/users/regist') 新用户注册
+    div.login-empty
+    script.
+        $(function(){
+
+        })
+

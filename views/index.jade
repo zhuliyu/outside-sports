@@ -1,0 +1,63 @@
+extends layout
+
+block content
+  link(rel='stylesheet',href="/stylesheets/index.css")
+  div.index-container
+    - 活动轮播
+    div#carousel-example-generic.carousel.slide.picture-scale(data-ride="carousel")
+      div.carousel-inner(role="listbox")
+        div.item.active
+          a(href="javascript:void(0)")
+            img(src="/images/activity2.jpg")
+        div.item
+          a(href="javascript:void(0)")
+            img(src="/images/activity1.jpg")
+      a.left.carousel-control(href="#carousel-example-generic",role="button" data-slide="prev")
+        span.glyphicon.glyphicon-chevron-left
+        span.sr-only Previous
+      a.right.carousel-control(href="#carousel-example-generic",role="button" data-slide="next")
+        span.glyphicon.glyphicon-chevron-right
+        span.sr-only Next
+    - 工会,使用瀑布流加载
+    div.home
+      img.home-title(src="/images/home1.png")
+      | 工会
+      div.home-list-container
+
+    - 热门城市/北上扬南
+    div.hotcity
+      img.hotcity-title(src="/images/hotcity.png")
+    - 推荐商品
+    p.index-hot-recomment
+      img(src="/images/shopping1.png")
+    div.adventure-recomment
+      div.row.text-center
+          div.col-lg-3.col-md-6.col-sm-6.col-xs-6.text-center.img-container
+            div
+              img(src="https://images.wosaimg.com/b6/ba61c012e8ad7979d2fa899ef0cb45206078c5.png")
+          div.col-lg-3.col-md-6.col-sm-6.col-xs-6.text-center.img-container
+            div
+              img(src="https://images.wosaimg.com/b6/ba61c012e8ad7979d2fa899ef0cb45206078c5.png")
+          div.col-lg-3.col-md-6.col-sm-6.col-xs-6.text-center.img-container
+            div
+              img(src="https://images.wosaimg.com/b6/ba61c012e8ad7979d2fa899ef0cb45206078c5.png")
+
+          div.col-lg-3.col-md-6.col-sm-6.col-xs-6.text-center.img-container
+            div
+              img(src="https://images.wosaimg.com/b6/ba61c012e8ad7979d2fa899ef0cb45206078c5.png")
+  script(src="/javascripts/index.js")
+  script.
+    function IsPC() {
+      const userAgentInfo = navigator.userAgent;
+      const Agents = ["Android", "iPhone",
+        "SymbianOS", "Windows Phone",
+        "iPad", "iPod"];
+      let flag = true;
+      for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+          flag = false;
+          break;
+        }
+      }
+      return flag;
+    }

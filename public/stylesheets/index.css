@@ -1,0 +1,115 @@
+body{
+    background-color: rgba(165, 255, 250, 0.5);
+}
+.index-container{
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    /*position: absolute;*/
+    transition: top .5s ease-out;
+    transition-property: top;
+    left: 0;
+    right: 0;
+    clear: both;
+}
+/*活动轮播bootstrap*/
+.index-container .picture-scale{
+    width: 80%;
+    margin: auto;
+    border: 0 solid #d6ccd9;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+.index-container img{
+    display: block;
+    margin: auto;
+    width: 100%;
+    border-radius: 2px;
+}
+.carousel-control{
+    /*border: 1px solid red;*/
+}
+.item{
+    border-width: 0;
+}
+.carousel-inner{
+    position: relative;
+    background-color: white;
+}
+
+
+
+/*工会*/
+.home{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    color:#afafaf;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+.home img.home-title{
+    width: 40px;
+}
+.home .home-list-container{
+    height: 300px;
+    border: 2px solid #c15a8b;
+}
+
+
+/*热门城市*/
+.hotcity{
+    height: 300px;
+}
+.hotcity .hotcity-title{
+    width: 40px;
+}
+
+
+/*热销商品*/
+.index-hot-recomment img{
+    width: 50px;
+    border-radius: 50%;
+}
+.index-container .adventure-recomment{
+    height: auto;
+    margin-top: 15px;
+}
+.img-container{
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.index-container .adventure-recomment .img-container div{
+    overflow: hidden;
+}
+.index-container .adventure-recomment img:hover{
+    cursor: pointer;
+    transition: transform 1s ease-out;
+    transition-property: transform;
+    transform-origin: 50% 50%;
+    transform: scale(1.2);
+}
+.adventure-recomment .intro{
+    font-size: 1.6rem;
+    margin-top: 3px;
+    color: #8195af;
+}
+
+
+
+@media screen and (max-width: 414px){
+    .index-container{
+        width: 100%;
+        margin-top: 0;
+    }
+    .index-container .picture-scale{
+        width: 100%;
+    }
+    .index-container .adventure-recomment{
+        width: 90%;
+        margin: auto;
+    }
+    .index-container .adventure-recomment .img-container div{
+        border-radius: 10%;
+    }
+}

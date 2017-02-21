@@ -1,0 +1,56 @@
+doctype html
+html
+    head
+        title= title
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Cache-Control" content="max-age=0")
+        meta(name="HandheldFriendly" content="true")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel='stylesheet',href="/stylesheets/shopping/shopping-layout.css")
+        script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    body
+        div.shopping-index-top
+            span.left
+                img.shopping-logo(src="/images/shopping/logo2.png" align="top")
+                | &nbsp;&nbsp;绿野仙踪
+            span.right
+                a(href="/shopping/search")
+                    img.shopping-search(src="/images/search.png" align="top")
+                a(href="/shopping/orders?order_type=0")
+                    span.myOrder &nbsp;&nbsp;&nbsp;我的订单
+        block content
+        div.shopping-index-bottom
+            div.bottom-item
+                a(href="/shopping")
+                    p
+                        img(src="/images/shopping/shopping-home.png")
+                    | 商城
+            div.bottom-item
+                a.divide(href="javascript:void(0)")
+                    p
+                        img(src="/images/shopping/fenlei.png")
+                    | 分类
+                div.shopping-index-fenlei
+                    div.fenlei-top
+                        div.fenlei-item 运动杂志
+                        div.fenlei-item 运动装备
+                        div.fenlei-item 运动元素
+                    div.fenlei-bottom
+            div.bottom-item
+                a(href="/shopping/lastest")
+                    p
+                        img(src="/images/shopping/lastest.png")
+                    | 最新
+            div.bottom-item
+                a(href="/shopping/cart")
+                    p
+                        img(src="/images/shopping/cart.png")
+                    | 购物车
+        script(src="/javascripts/shopping/shopping-layout.js")
+
+
+
+
+
+

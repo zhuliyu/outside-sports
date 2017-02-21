@@ -1,0 +1,51 @@
+doctype html
+html
+    head
+        title= title
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Cache-Control" content="max-age=0")
+        meta(name="HandheldFriendly" content="true")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel='stylesheet',href="/stylesheets/shopping/shopping-cart.css")
+        script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    body
+        div.shoppingCart-container
+            div.shopping-cart-container
+                p.shopping-cart-container-title
+                    span.first 绿野仙踪
+                    span.second
+                        a.editor(href="javascript:void(0)") 编辑
+                div.shopping-cart-list-container
+                    each val in introduction
+                        div.production-container
+                            div.production-container-items.first
+                                img.select(src="/images/shopping/no_selected.png" align="top")
+                            div.production-container-items.second
+                                img(src=val.production_imgUrl)
+                            div.production-container-items.third
+                                p.production-container-items-title=val.production_title
+                                p.styles=val.styles
+                                p.price-container
+                                    span.price(data-price=val.production_price)='¥' + parseFloat(val.production_price).toFixed(2)
+                                    span.count-number
+                                        input.minus(type="button" value="-")
+                                        input.number(type="number" value="1")
+                                        input.and(type="button" value="+")
+            div.null
+                if(!introduction.length)
+                    img(src="/images/shopping/cart.png")
+                    p 您的购物车是空的
+                    p.link
+                        a(href="/shopping") 送你一张飞机票
+            div.tooltips 请至少选择一个商品
+            div.shopping-cart-bottom
+                .shopping-cart-bottom-items.first
+                    img.total-select(src="/images/shopping/no_selected.png" align="top")
+                    | &nbsp;全选
+                .shopping-cart-bottom-items.second
+                    p 合计: ¥&nbsp;
+                        span.total-prices 0.00
+                    p.yunfei 不含运费
+                .shopping-cart-bottom-items.third 去支付
+        script(src="/javascripts/shopping/shopping-cart.js")

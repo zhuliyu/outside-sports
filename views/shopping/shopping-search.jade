@@ -1,0 +1,21 @@
+extend shopping-layout
+block content
+    link(rel='stylesheet',href="/stylesheets/shopping/shopping-search.css")
+    script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    div.shopping-search-container
+        li
+            img(src="/images/search.png" align="top")
+            input.search-content(type="text" placeholder="搜索关键字搜索商品")
+            img.cancel(src="/images/shopping/cancel1.png")
+        div.shopping-lastest-content
+            if(productionList != undefined)
+                each val in productionList
+                    a(href=val.production_url)
+                        div.production-container
+                            div.production-container-left
+                                img(src=val.production_imgUrl)
+                            div.production-container-right
+                                p.product-title= val.production_title
+                                p.product-price ¥
+                                    span= parseFloat(val.production_price).toFixed(2)
+    script(src="/javascripts/shopping/shopping-search.js")

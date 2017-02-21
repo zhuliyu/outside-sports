@@ -1,0 +1,70 @@
+extend layout
+
+block content
+    link(rel='stylesheet',href="/stylesheets/regist.css")
+    div.regist-container
+        ul
+            li
+                p.regist-text
+                    img(src="/images/cute1.png")
+                    | 注册
+            li
+                p.phone 手机:
+                    input(type="text" placeholder="手机号" value="18006247209")
+            li
+                p.yanzhengma <span style="opacity: 0;">验证:</span>
+                    input(type="text" placeholder="输入验证码")
+            | <div class="get"><u>获取</u></div>
+            li
+                p.password 密码:
+                    input(type="password" placeholder="密码")
+            li
+                p.regist-button
+                    img(src="/images/regist.png")
+            li
+                p.regist-login
+                    a(href='/users/login') 老用户登录
+    div.regist-empty
+    script.
+        let validation='0000';
+        $(function(){
+            //获取短信验证码
+            $('.regist-container .get').click(function(){
+                if($(this).text() == '获取'){
+                    let phone = $('.phone input').val();
+                    if (phone != '') {
+                        daojishi();
+                        let options = {
+                            phone,
+                        }
+                        $.post('/users/validate', options, function (data) {
+                            validation = data;
+                        })
+                    } else {
+                        alert('号码不能为空');
+                    }
+                }
+            })
+        })
+        $('.regist-button img').click(function(){
+            if($('.yanzhengma input').val() != validation){
+                alert('验证码错误');
+            }else{
+                alert('ok');
+            }
+        })
+        function daojishi() {
+            $('.get').text(`60s后重新获取`);
+            let second=parseInt($('.get').text());
+            let t=setInterval(function(){
+                if(second < 10){
+                    $('.get').text('0'+second--+'s'+'后重新获取');
+                }else{
+                    $('.get').text(''+second--+'s'+'后重新获取');
+                }
+                if(second == 0){
+                    clearInterval(t);
+                    $('.get').empty().html(`获取`);
+                }
+            },1000);
+        }
