@@ -13,6 +13,10 @@
     "jade": "~1.11.0",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
-    "less":"1.5.x"
+    "less":"1.5.x",
+    "express-session": "lastest",
+    "nodemon": "lastest",
+    "less-middleware": "lastest",
+    "redis": "lastest"
   }
 }
