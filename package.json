@@ -14,9 +14,14 @@
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.0",
     "less":"1.5.x",
-    "express-session": "lastest",
-    "nodemon": "lastest",
-    "less-middleware": "lastest",
-    "redis": "lastest"
+    "express-session": "latest",
+    "nodemon": "latest",
+    "less-middleware": "latest",
+    "redis": "latest",
+    "mongoose":"latest",
+    "mysql":"latest",
+    "request":"latest",
+    "promise":"latest",
+    "fetch":"latest"
   }
 }
