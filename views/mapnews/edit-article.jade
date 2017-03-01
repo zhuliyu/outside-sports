@@ -1,0 +1,40 @@
+extend news-layout
+block content
+    link(rel='stylesheet',href="/stylesheets/news/article.css")
+    script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js")
+    script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js")
+    script(type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js")
+    div.article-layout
+        div.form-container
+            input.youji-input(type="text" placeholder="标题" value=article.title)
+            script(id="editor" type="text/plain" name="content")
+            p.tooltip 添加封面
+            div.choose-container
+                form(enctype="multipart/form-data" id="img-upload")
+                    input.upload(type="file" class="inputFile" name="inputImage01")
+                    img.upload-img(src="/images/news/addPic.png")
+            div.target
+                img(src=article.cover style="width:100%;height:100%;")
+    div.operate(data-id=article.article_id)
+        input.save(type="button" value="保存" data-content=article.content)
+        | &nbsp;
+        input.yulan(type="button" value="预览")
+        | &nbsp;
+        input.back(type="button" value="返回")
+    div.showResult
+        div.word 请补全信息
+    div.modal
+        div.close-modal
+            img(src="/images/news/close.png")
+        div.yulan-container
+            p.title
+            p.date 2017------
+            p.content
+    script(src="/javascripts/news/edit-article.js")
+    script.
+        const editor = new UE.ui.Editor({initialFrameHeight:400});
+        editor.render("editor");
+        editor.ready(function() {
+            editor.setContent($('.save')[0].dataset.content);  //赋值给UEditor
+        });
+

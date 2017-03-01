@@ -1,0 +1,30 @@
+doctype html
+html
+    head
+        title= title
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Cache-Control" content="max-age=0")
+        meta(name="HandheldFriendly" content="true")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel='stylesheet',href="/stylesheets/activity/youji-read.css")
+        script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    body
+        div.youji-read-container
+            p.title=article[0].title
+            p.date=article[0].date
+            div.content-container(data-content=article[0].content)
+            p.static 阅读 #{article[0].read} &nbsp;
+                span.do(data-id=article[0].article_id)
+                    img.zan(src="/images/youji/zan_open.png" align="top")
+                    span.num=article[0].good
+                    span.increase +1
+        script(src="/javascripts/youji/read.js")
+
+
+
+
+
+
+
+

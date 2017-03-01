@@ -1,0 +1,157 @@
+body{
+    background: -webkit-gradient(linear, 100% 0%, 20% 20%,from(rgb(252, 246, 255)), to(#e6e4ee));
+}
+a{
+    color: #f4f4f4;
+    text-decoration: none;
+}
+.top{
+    background-color: black;
+    color: white;
+    text-align: right;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+}
+.youji-index-container{
+    height: auto;
+    clear: both;
+    margin-top: 10px;
+    /*background-color: rgba(1,1,1,0);*/
+}
+.youji-list-all-container{
+    width: 92%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #fbffff;
+    /*background: -webkit-gradient(linear, 100% 0%, 20% 20%,from(rgb(252, 246, 255)), to(#e6e4ee));*/
+    border-radius: 8px;
+
+    /*position: absolute;*/
+    /*z-index: 102;*/
+    /*left: 100%;*/
+    /*transition: left , top, 0s;*/
+    /*transition-property: all , linear;*/
+}
+.youji-list-all-container-item.first{
+    position: relative;
+    flex: 0.35;
+    border-top-left-radius: 4px;
+}
+.youji-list-all-container-item.first img.cover{
+    width: 100px;
+    height: 100px;
+    float: right;
+    border-radius: 4px;
+}
+.youji-list-all-container-item.second{
+    flex: 0.60;
+    padding-top: 10px;
+    color: #565656;
+}
+.title{
+    font-weight: bold;
+}
+.author{
+    font-size: 13px;
+    margin-top: 4px;
+}
+.youji-list-all-container-item.second span{
+    font-size: 13px;
+}
+.good{
+    position: absolute;
+    color: white;
+    height: 20px;
+    right: 0;
+    width: 100px;
+    padding-top: 2px;
+    font-size: 13px;
+    text-align: right;
+    background: -webkit-gradient(linear, 0% 100%, 0% 0%,from(rgba(184, 196, 203, 0.01)), to(rgba(148, 135, 149, 0.86)));
+}
+.good img{
+    width: 13px;
+    margin-top: 0;
+}
+.loadMore{
+    display: block;
+    width: 90%;
+    height: 28px;
+    font-size: 14px;
+    color: white;
+    margin: auto;
+    margin-bottom: 60px;
+    margin-top: 4px;
+    border-width: 0;
+    border-radius: 8px;
+    background-color: #6bafff;
+    outline: none;
+}
+.loading{
+    /*display: block;*/
+    margin: auto;
+    width: 50%;
+    margin-top: -30px;
+    display: none;
+    /*position: absolute;*/
+    /*z-index: 102;*/
+}
+.toTop{
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    width: 40px;
+    display: none;
+}
+.content{
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+
+/*下面开始 myarticle独有样式*/
+.addArticle{
+    width: 90%;
+    height: 30px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 15px;
+    border-width: 0;
+    color: white;
+    outline: none;
+    background-color: #67ef77;
+}
+.operator_my{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+    height: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.operator-my-item{
+    flex: 0.49;
+    text-align: center;
+}
+.operator-my-item:nth-child(1){
+    border-right: 1px solid #e6e4ee;
+}
+.delete{
+    width: 12px;
+}
+.editor{
+    width: 16px;
+}

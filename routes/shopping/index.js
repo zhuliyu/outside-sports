@@ -16,7 +16,7 @@ router.all('*', function(req, res, next) {
 router.get('/', (req, res) => {
     const indexProduction = [
         {
-            production_imgUrl: 'https://piccdn.luojilab.com/store-pc/image/201701/1484981741997.jpg@405w_2e_1l_1an.src',
+            production_imgUrl: 'https://piccdn.luojilab.com/store-pc/image/201702/1487739128249.jpg@405w_2e_1l_1an.src',
             production_url: '/shopping/production?id=5',
         },
         {

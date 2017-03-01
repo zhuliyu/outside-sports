@@ -22,6 +22,9 @@
     "mysql":"latest",
     "request":"latest",
     "promise":"latest",
-    "fetch":"latest"
+    "fetch":"latest",
+    "ueditor": "^1.0.0",
+    "busboy":"latest",
+    "log4j":"latest"
   }
 }

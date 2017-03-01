@@ -1,0 +1,25 @@
+extend ../layout
+block content
+    link(rel='stylesheet',href="/stylesheets/activity/youji-all.css")
+    p.top
+        a(href="/youji/myArticles") 我的游记&nbsp;&nbsp;
+    div.youji-index-container
+        each val in article_list
+            div.youji-list-all-container(data-id=val.article_id)
+                .youji-list-all-container-item.first
+                    p.good
+                        img.zan(src="/images/youji/good.png" align="top")
+                        | &nbsp;#{val.good}&nbsp;
+                    img.cover(src=val.cover)
+                .youji-list-all-container-item.second
+                    p.title=val.title
+                    p.author=val.author
+                        | &nbsp;
+                        span=val.date
+                    p.content=val.contentText.slice(0, 20)+'...'
+    img.toTop(src="/images/youji/totop2.png")
+    img.loading(src="/images/youji/loading3.gif")
+    input.loadMore(type="button" value="加载更多")
+    script(src="/javascripts/youji/article_all.js")
+
+

@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #f1f1f1;
+    position: relative;
+}
+.article-layout{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background-color: white;
+    border-radius: 6px;
+}
+.form-container{
+    width: 98%;
+    margin: auto;
+}
+.youji-input{
+    width: 98%;
+    height: 30px;
+    font-size: 20px;
+    outline: none;
+    margin-bottom: 20px;
+    /*border-radius: 4px;*/
+    border-width: 0;
+    border-bottom: 1px solid #e6f5ff;
+}
+.upload{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    opacity: 0;
+}
+.upload:hover{
+    cursor: pointer;
+}
+.tooltip{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #a96997;
+}
+.view-target img{
+    width: 150px;
+    margin-bottom: 80px;
+}
+.operate{
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(1,1,1,0);
+    text-align: center;
+    line-height: 50px;
+}
+#editor{
+    opacity: 0.99;
+}
+.save{
+    background-color: #9b37ff;
+    color: white;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    border-width: 0;
+    border-radius: 4px;
+    outline: none;
+}
+.yulan{
+    background-color: #bff5ff;
+    color: black;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    border-width: 0;
+    border-radius: 4px;
+    outline: none;
+}
+.back{
+    background-color: #93ffe2;
+    color: black;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    border-width: 0;
+    border-radius: 4px;
+    outline: none;
+}
+.save:hover{
+    cursor: pointer;
+}
+.yulan:hover{
+    cursor: pointer;
+}
+.showResult{
+    position:fixed;
+    margin:auto;
+    top:60px;
+    left:0;
+    right:0;
+    width:150px;
+    border:1px solid #dedede;
+    border-radius: 4px;
+    height:30px;
+    box-shadow: 0 0 3px 1px #dbdcdd;
+    font-size: 1.2rem;
+    font-family: 黑体;
+    line-height: 30px;
+    opacity:0;
+    text-align: center;
+    background-color: orange;
+    color: white;
+}
+.word{
+    display: inline-block;
+}
+.target{
+    width:150px;
+    height:150px;
+    display: inline-block;
+    vertical-align: top;
+}
+.modal{
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    height: 100%;
+    background-color: rgba(1,1,1,0.4);
+    width: 100%;
+    display: none;
+}
+.yulan-container{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow-y: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.title{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.date{
+    font-size: 14px;
+    margin-top: 10px;
+}
+.content{
+    margin-top: 10px;
+}
+.yulan-container img{
+    width: 100%;
+}
+.yulan-container p{
+    margin-bottom: 0px ! important;
+}
+.close-modal{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.close-modal img{
+    width: 50px;
+}

@@ -7,9 +7,10 @@ const Schema = mongoose.Schema;
 
 const Article_Schema = new Schema({
     article_id: String,
-    user_id: Number,
-    activity_id: Number,
+    openId: String,
     title: String,
+    author: String | null,
+    cover: String,
     content: String,        //带标签的html
     contentText: String,    //纯文本
     date: Date | null,
@@ -19,5 +20,5 @@ const Article_Schema = new Schema({
     versionKey: false,
 });
 
-const article = mongoose.model("Article", Article_Schema);
-exports.article = article;
+const MyArticle = mongoose.model("Article", Article_Schema);
+exports.article = MyArticle;

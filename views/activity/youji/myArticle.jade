@@ -1,0 +1,28 @@
+extend ../layout
+block content
+    link(rel='stylesheet',href="/stylesheets/activity/youji-all.css")
+    p.top
+        a(href="/youji") 游记&nbsp;&nbsp;
+    a(href="/news/travelNotes/add")
+        input.addArticle(type="button" value="添加游记")
+    div.youji-index-container
+        each val in article_list
+            div.youji-list-all-container(data-id=val.article_id)
+                .youji-list-all-container-item.first
+                    p.good
+                        img.zan(src="/images/youji/good.png" align="top")
+                        | &nbsp;#{val.good}&nbsp;
+                    img.cover(src=val.cover)
+                .youji-list-all-container-item.second
+                    p.title=val.title
+                    span=val.date
+                    p.content=val.contentText.slice(0, 20)+'...'
+                div.operator_my
+                    .operator-my-item.first
+                        img.delete(src="/images/youji/delete1.png")
+                    .operator-my-item.second
+                        img.editor(src="/images/youji/edit2.png")
+    img.toTop(src="/images/youji/totop2.png")
+    img.loading(src="/images/youji/loading3.gif")
+    input.loadMore(type="button" value="加载更多")
+    script(src="/javascripts/youji/article_my.js")

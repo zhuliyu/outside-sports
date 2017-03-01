@@ -16,7 +16,7 @@ exports.shoppingDao = {
 };
 function queryUsers(client, sql) {
     return new Promise((resolve, reject) => {
-        client.query(sql, (error, result, fields) => {
+        client.query(sql, (error, result) => {
             if (error) {
                 reject(error);
             }
