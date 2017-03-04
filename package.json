@@ -25,6 +25,6 @@
     "fetch":"latest",
     "ueditor": "^1.0.0",
     "busboy":"latest",
-    "log4j":"latest"
+    "log4js":"latest"
   }
 }

@@ -66,6 +66,7 @@ router.post('/travelNotes/upload',function(req, res){
 router.post('/travelNotes/save',function(req, res){
     req.body.article_id = Math.random()*1000000 + new Date().getTime();
     req.body.openId = 'OXsoslkslskls';
+    req.body.author = '周小e';
     const beta = new MyArticle(req.body);
     beta.save((err, body) => {
         if (err) {

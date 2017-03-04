@@ -75,7 +75,7 @@ function getMore(page) {
                                 `<img class="delete" src="/images/youji/delete1.png" />`+
                             `</div>`+
                             `<div class="operator-my-item second">`+
-                                `<img class="editor" src="/images/youji/editor.png" />`+
+                                `<img class="editor" src="/images/youji/edit4.png" />`+
                             `</div>`+
                         `</div>`+
                     `</div>`;

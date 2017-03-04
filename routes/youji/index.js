@@ -22,12 +22,12 @@ Date.prototype.Format = function (fmt) {
     return fmt;
 };
 
-router.all('*', function(req, res, next) {
-    if(!req.headers['user-agent'].match('MicroMessenger')){
-        res.render('errorUserAgent', { title: 'error' });
-    }
-    next();
-});
+//router.all('*', function(req, res, next) {
+//    if(!req.headers['user-agent'].match('MicroMessenger')){
+//        res.render('errorUserAgent', { title: 'error' });
+//    }
+//    next();
+//});
 /* GET home page. */
 /*游记主页  所有游记 往下刷*/
 router.get('/', (req, res) => {
@@ -127,4 +127,5 @@ router.post('/myArticles/delete', (req, res) => {
 router.post('/read/zan', (req, res) => {
     dao.dao.zan(req.body.id);
 });
+
 module.exports = router;

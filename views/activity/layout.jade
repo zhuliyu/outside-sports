@@ -9,6 +9,7 @@ html
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel='stylesheet',href="/stylesheets/activity/layout.css")
         script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+        script(src="/javascripts/swipe.js")
     body
         block content
         div.activity-layout-container
@@ -22,6 +23,10 @@ html
                     p
                         img(src="/images/youji/youji.png")
                     | 游记
+    script.
+        if (window.location.pathname.indexOf('/youji') !== -1) {
+            $('.activity-layout-container').hide();
+        }
 
 
 

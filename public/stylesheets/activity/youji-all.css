@@ -31,7 +31,7 @@ a{
     justify-content: space-between;
     background-color: #fbffff;
     /*background: -webkit-gradient(linear, 100% 0%, 20% 20%,from(rgb(252, 246, 255)), to(#e6e4ee));*/
-    border-radius: 8px;
+    /*border-radius: 8px;*/
 
     /*position: absolute;*/
     /*z-index: 102;*/
@@ -48,7 +48,7 @@ a{
     width: 100px;
     height: 100px;
     float: right;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
 }
 .youji-list-all-container-item.second{
     flex: 0.60;
@@ -118,7 +118,7 @@ a{
 
 /*下面开始 myarticle独有样式*/
 .addArticle{
-    width: 90%;
+    width: 40%;
     height: 30px;
     display: block;
     margin: auto;
@@ -130,7 +130,7 @@ a{
     border-width: 0;
     color: white;
     outline: none;
-    background-color: #67ef77;
+    background-color: #7dcfef;
 }
 .operator_my{
     width: 100%;
@@ -154,4 +154,10 @@ a{
 }
 .editor{
     width: 16px;
+}
+
+@media screen and (min-width: 414px){
+    .youji-list-all-container{
+        width: 414px;
+    }
 }
