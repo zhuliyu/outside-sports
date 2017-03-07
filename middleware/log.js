@@ -18,36 +18,18 @@ const logConfigure = {
     appenders: [
         {
             type: 'dateFile',
-            filename: 'common.log',
+            filename: 'Logger/common.log',
             pattern: "-yyyy-MM-dd",
             category: ['common', 'request'],
             alwaysIncludePattern: true,
             layout: {
                 type: "wsLayout"
             }
-        }, {
+        },{
             type: 'dateFile',
-            filename: 'client.log',
-            pattern: "-yyyy-MM-dd",
-            category: 'client',
-            alwaysIncludePattern: true,
-            layout: {
-                type: "wsLayout"
-            }
-        }, {
-            type: 'dateFile',
-            filename: 'errorDetail.log',
+            filename: 'Logger/errorDetail.log',
             pattern: "-yyyy-MM-dd",
             category: 'error',
-            alwaysIncludePattern: true,
-            layout: {
-                type: "wsLayout"
-            }
-        }, {
-            type: 'dateFile',
-            filename: 'weixinClientPayResult.log',
-            pattern: "-yyyy-MM-dd",
-            category: 'weixinClientPayResult',
             alwaysIncludePattern: true,
             layout: {
                 type: "wsLayout"
@@ -58,7 +40,8 @@ const logConfigure = {
 };
 
 
-log4js.configure(logConfigure, { cwd: '/app/log/app' });
+//log4js.configure(logConfigure, { cwd: '/app/log/app' });
+log4js.configure(logConfigure);
 
 /**
  * default set common logger to req

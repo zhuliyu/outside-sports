@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title= title
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Cache-Control" content="max-age=0")
+        meta(name="HandheldFriendly" content="true")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel='stylesheet',href="/stylesheets/activity/activity-launch.css")
+        script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    body
+        .form-container
+            li
+                label(for="launch-title") 标题:&nbsp;
+                input#launch-title(type="text" placeholder="召集令")
+            li
+                label(for="launch-limit") 人数:&nbsp;
+                input#launch-limit(type="number" placeholder="限制30人")
+            li
+                label(for="launch-gather") 集合:&nbsp;
+                input#launch-gather(type="text" placeholder="请认真填写地址")
+            li
+                label(for="launch-tel") 电话:&nbsp;
+                input#launch-tel(type="tel" placeholder="请填写有效联系方式")
+            li
+                label(for="launch-name") 姓名:&nbsp;
+                input#launch-name(type="text" placeholder="请填写您的真实姓名")

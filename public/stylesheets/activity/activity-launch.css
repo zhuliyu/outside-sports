@@ -1,0 +1,27 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.form-container {
+    width: 96%;
+    margin: auto;
+}
+li{
+    list-style: none;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+label {
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+}
+#launch-title, #launch-limit, #launch-gather, #launch-tel, #launch-name{
+    width: 80%;
+    height: 24px;
+    border-width: 0;
+    border-bottom: 1px solid #b6b6b6;
+    outline: none;
+    font-size: 15px;
+}

@@ -2,18 +2,18 @@ extend ../layout
 block content
     link(rel='stylesheet',href="/stylesheets/activity/activity-index.css")
     div
-        div.activity-top
-            div#slider.swipe(style="visibility:visible")
-                div.swipe-wrap
-                    figure
-                        div.container
-                            span 主页
-                            span 游记
-                            span 商城
-                            img(src="/images/activity/right.png" style="width: 20px;float: right;" )
-                    figure
-                        div.container(style="text-align: right")
-                            span 加入我们
+        //div.activity-top
+        //    div#slider.swipe(style="visibility:visible")
+        //        div.swipe-wrap
+        //            figure
+        //                div.container
+        //                    span 主页
+        //                    span 游记
+        //                    span 商城
+        //                    img(src="/images/activity/right.png" style="width: 20px;float: right;" )
+        //            figure
+        //                div.container(style="text-align: right")
+        //                    span 加入我们
         div#activity-slider.swipe(style="visibility:visible")
             div.swipe-wrap
                 figure
@@ -23,16 +23,44 @@ block content
                     div.container
                         img(src="/images/activity2.jpg")
         div.devide
-            .deveide-items
-                img.aa(src="/images/activity/aa.png")
-                p.title AA约伴
+            a(href="/activity/gather?type=official")
+                .deveide-items
+                    img.aa(src="/images/activity/aa.png")
+                    p.title AA约伴
             .deveide-items
                 div.day=(new Date()).getDate()
                 p.title 每日一闻
             .deveide-items
                 img.aa(src="/images/activity/fabu.png")
-                p.title 募集友军
-    //script(src="/javascripts/youji/article_all.js")
+                p.title 我的活动
+        div.activity-guanfang-container
+            span(style="font-size: 14px;font-weight: bold;")
+                img.guanfang(src="/images/activity/activity-logo.png" align="top")
+                | &nbsp;活动篇
+                a(href="javascript:void(0)")
+                    span.youji-more 更多&nbsp;
+                        img(src="/images/activity/more.png", style="width: 10px;")
+            div.activity-list-container
+        div.activity-guanfang-container
+            span(style="font-size: 14px;font-weight: bold;")
+                img.guanfang(src="/images/activity/zhangzhishi.png" align="top")
+                | &nbsp;涨知识
+                a(href="javascript:void(0)")
+                    span.youji-more 更多&nbsp;
+                        img(src="/images/activity/more.png", style="width: 10px;")
+        div.activity-guanfang-container.third
+            span(style="font-size: 14px;font-weight: bold;")
+                img.guanfang(src="/images/activity/diary-logo1.png" align="top")
+                | &nbsp;游记篇
+                a(href="/youji")
+                    span.youji-more 更多&nbsp;
+                        img(src="/images/activity/more.png", style="width: 10px;")
+            div.articles-list-container
+                each val in article_list
+                    .article-list-item(data-id=val.article_id)
+                        img(src=val.cover)
+                        p=val.title.slice(0, 6)
+    script(src="/javascripts/activity/activity_index.js")
     script.
         var slider =
                 Swipe(document.getElementById('slider'), {

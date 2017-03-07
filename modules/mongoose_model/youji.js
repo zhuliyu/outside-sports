@@ -1,5 +1,6 @@
 /**
  * Created by e on 17/2/26.
+ * 游记表
  */
 require('../mongoConfig');
 const mongoose = require('mongoose');
