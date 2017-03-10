@@ -1,3 +1,4 @@
+//新增游记
 extend news-layout
 block content
     link(rel='stylesheet',href="/stylesheets/news/article.css")
@@ -8,7 +9,7 @@ block content
         div.form-container
             input.youji-input(type="text" placeholder="标题")
             script(id="editor" type="text/plain" name="content")
-            p.tooltip 添加封面
+            p.tooltip 选择封面
             div.choose-container
                 form(enctype="multipart/form-data" id="img-upload")
                     input.upload(type="file" class="inputFile" name="inputImage01")

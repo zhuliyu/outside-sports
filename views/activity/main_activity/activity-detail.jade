@@ -1,0 +1,62 @@
+doctype html
+html
+    head
+        title= title
+        meta(http-equiv="Content-Type" content="text/html; charset=utf-8")
+        meta(http-equiv="Cache-Control" content="no-cache")
+        meta(http-equiv="Cache-Control" content="max-age=0")
+        meta(name="HandheldFriendly" content="true")
+        meta(name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        link(rel='stylesheet',href="/stylesheets/activity/activity-detail.css")
+        script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
+    body
+        .activity-join-modal
+            .join-container
+                img.close(src="/images/activity/chacha.png")
+                p(style="text-align: center; display: block; margin-top: 20px; color: black; font-size: 17px;") 我要报名
+                form#myform(method="POST" action="/activity/join")
+                    input.telephone(type="tel" placeholder="请留下您的手机号" name="join_telephone")
+                    input.openId(type="tel" value=openId name="join_openId" style="display: none")
+                    input.activity_id(type="tel" value=detail.activity_id name="activity_id" style="display: none")
+                    input.join-btn(type="submit" value="确认报名")
+        .activity-join-container
+            img.bike(src="/images/activity/bike.png" style="width: 60px; display: block; margin-bottom: 10px;")
+            p.join-title.item=detail.activity_title
+            p.join-launcher-name.item(style="margin-bottom: 20px;") 令主: #{detail.launcher_name}
+            p.item(style="font-size: 14px;") 冒险者们在等候你
+            p.item(style="font-size: 18px;") 赶紧报名参与吧
+            p.joiners-img.item
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+                img(src="/images/youji/cover.jpg")
+            p.least-num.item 剩余名额:&nbsp;&nbsp; <span class="leastNum" style="color: white; font-size: 18px;">0</span>
+            p.total-num.item(style="display: none;")=detail.limit
+            p.openId.item(style="display: none;")=openId
+            p.activity-introduction.item(style="display: none;")=openId
+            p.endDate.item 报名截止时间: 2017-03-14
+            p.open_info.item 查看活动说明<br/>
+                img(src="/images/activity/arrow_down.png" style="width: 15px;")
+            .activity-content(style="display: none; margin-top: 40px;" data-info=detail.activity_introduction)
+            p.join-btn-container(style="text-align: center" data-id=detail.activity_id)
+                if ((new Date()) > (new Date(detail.end_date)))
+                    input.operate-btn.doing(type="button" value="进行中")
+                else
+                    if (detail.launcher_openId == openId)
+                        input#delete.operate-btn(type="button" value="撤销活动")
+                    else
+                        if (join == 1)
+                            input#exit.operate-btn(type="button" value="退出活动")
+                        else
+                            input#join.operate-btn(type="button" value="揭竿而起")
+        script(src="/javascripts/activity/activity-detail.js")
+
+
+
+

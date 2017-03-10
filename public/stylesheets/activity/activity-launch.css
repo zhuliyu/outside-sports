@@ -11,17 +11,44 @@ li{
     margin: auto;
     text-align: center;
     margin-top: 20px;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-radius: 4px;
 }
 label {
     height: 30px;
     line-height: 30px;
     font-size: 15px;
+    font-weight: bold;
 }
-#launch-title, #launch-limit, #launch-gather, #launch-tel, #launch-name{
-    width: 80%;
+#launch-title, #launch-limit, #launch-gather, #launch-tel, #launch-name, #launch-endDate {
+    width: 70%;
     height: 24px;
     border-width: 0;
-    border-bottom: 1px solid #b6b6b6;
+    /*border-bottom: 1px solid #b6b6b6;*/
     outline: none;
     font-size: 15px;
+}
+#editor {
+    /*display: none;*/
+    opacity: 0.9;
+}
+#submit {
+    height: 30px;
+    font-size: 15px;
+    border: 1px solid #f1f1f1;
+    background-color: #7c87ff;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 6px;
+    display: block;
+    margin: auto;
+}
+.submit{
+    position: fixed;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    bottom: 30px;
 }

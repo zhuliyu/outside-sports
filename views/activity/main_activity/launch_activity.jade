@@ -8,21 +8,40 @@ html
         meta(name="HandheldFriendly" content="true")
         meta(name="viewport" content="width=device-width, initial-scale=1")
         link(rel='stylesheet',href="/stylesheets/activity/activity-launch.css")
+        script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js")
+        script(type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js")
+        script(type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js")
         script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
     body
+        .top(style="width: 100%;")
+            img(src="/images/activity/zhaojiling.jpeg" style="width: 100%;")
         .form-container
-            li
-                label(for="launch-title") 标题:&nbsp;
-                input#launch-title(type="text" placeholder="召集令")
-            li
-                label(for="launch-limit") 人数:&nbsp;
-                input#launch-limit(type="number" placeholder="限制30人")
-            li
-                label(for="launch-gather") 集合:&nbsp;
-                input#launch-gather(type="text" placeholder="请认真填写地址")
-            li
-                label(for="launch-tel") 电话:&nbsp;
-                input#launch-tel(type="tel" placeholder="请填写有效联系方式")
-            li
-                label(for="launch-name") 姓名:&nbsp;
-                input#launch-name(type="text" placeholder="请填写您的真实姓名")
+            form#launchForm
+                li
+                    label(for="launch-title") 召集主题:&nbsp;
+                    input#launch-title(type="text" placeholder="拟个吸引人的标题吧" name="activity_title" required)
+                li
+                    label(for="launch-limit") 召集人数:&nbsp;
+                    input#launch-limit(type="number" placeholder="限制30人" name="limit" required)
+                li
+                    label(for="launch-gather") 召集地点:&nbsp;
+                    input#launch-gather(type="text" placeholder="请计划好集合地点时间" name="gather_place" required)
+                li
+                    label(for="launch-name") 令主姓名:&nbsp;
+                    input#launch-name(type="text" placeholder="方便队友联系您哦" name="launcher_name" required)
+                li
+                    label(for="launch-tel") 令主电话:&nbsp;
+                    input#launch-tel(type="tel" placeholder="方便队友联系您哦" name="launcher_telephone" required)
+                li
+                    label(for="launch-endDate") 截止日期:&nbsp;
+                    input#launch-endDate(type="date" name="end_date" min=(new Date()) required)
+                li(style="border-width: 0;")
+                    input#submit(type="submit" value="发出召集令")
+                li(style="border-width: 0; text-align: left;")
+                    label(for="editor") 活动补充:&nbsp;
+                    script(id="editor" type="text/plain" required)
+
+    script(src="/javascripts/activity/activity-launch.js")
+    script.
+        const editor = new UE.ui.Editor({initialFrameHeight:400});
+        editor.render("editor");

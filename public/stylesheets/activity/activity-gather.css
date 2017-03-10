@@ -2,6 +2,132 @@
     padding: 0;
     margin: 0;
 }
+a {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+.activity-guize-modal {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1,1,1,0.6);
+    display: none;
+}
+.activity-modal-content{
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    top: 30px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    background-color: white;
+    overflow: auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+h1{
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+}
+.activity-modal-content p{
+    padding-left:20px;
+    position:relative;
+    margin-bottom:10px;
+}
+.activity-modal-content p span {
+    position:absolute;
+    left:0;
+}
 .gather-container {
-
+    background-color: rgba(128, 128, 128, 0.51);
+}
+.activity-list-top-container {
+    width: 90%;
+    height: 120px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+.activity-list-top-items.first {
+    flex: 0.35;
+}
+.activity-list-top-items.first img{
+    width: 100%;
+}
+.activity-list-top-items.second {
+    flex: 0.6;
+    padding-top: 10px;
+    color: white;
+    font-size: 17px;
+    position: relative;
+}
+.activity-list-bottom {
+    height: 30px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.activity-list-container {
+    padding-top: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid #e3e3e3;
+    position: relative;
+    background-color: white;
+    /*margin-bottom: 10px;*/
+}
+.activity-list-items {
+    text-align: center;
+    /*height: 90px;*/
+}
+.activity-list-items:nth-child(1) {
+    flex: 0.15;
+    line-height: 80px;
+    font-size: 16px;
+    color: orange;
+    font-weight: bold;
+}
+.activity-list-items:nth-child(2) {
+    flex: 0.8;
+    font-size: 14px;
+    text-align: left;
+}
+.launcher {
+    color: grey;
+    margin-top: 10px;
+}
+.activity-list-items p {
+    margin-bottom: 6px;
+}
+.activity-title{
+    padding-right: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #616b77;
+}
+.endDate{
+    line-height: 15px;
+}
+.type{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.type img {
+    width: 40px;
+}
+.gather-information{
+    /*text-decoration: underline;*/
+    color: rgba(0, 128, 0, 0.79);
+    font-size: 16px;
 }

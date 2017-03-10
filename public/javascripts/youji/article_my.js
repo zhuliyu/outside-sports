@@ -5,18 +5,25 @@
  * Created by e on 17/2/28.
  */
 let page = 1;
+let list = true;
 $('.youji-index-container').on('click', '.youji-list-all-container', function() {
     const id = $(this)[0].dataset.id;
     location.href = `/youji/read?id=${id}`;
 });
 $('.loadMore').click(function(){
     page++;
-    $('.loading')[0].style.display='block';
+
     console.log();
     $('body').scrollTop($(this).offset().top);
-    setTimeout(function() {
-        getMore(page);
-    }, 500);
+    if (list) {
+        $('.loading')[0].style.display='block';
+        setTimeout(function() {
+            getMore(page);
+        }, 500);
+    } else {
+        alert('到底啦');
+    }
+
 });
 $('.toTop').click(function(){
     $('body').animate({scrollTop: '0px'}, 1000, function() {
@@ -54,7 +61,11 @@ function getMore(page) {
     }, function(err, res, data) {
         if (data.responseJSON.length == 0) {
             $('.loading').hide();
+            list = false;
         } else {
+            if (data.responseJSON.length < 10) {
+                list = false;
+            }
             $('.toTop').show();
             let text = '';
             for(let i = 0; i < data.responseJSON.length; i++) {

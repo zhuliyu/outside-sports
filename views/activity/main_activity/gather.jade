@@ -6,13 +6,61 @@ html
         meta(http-equiv="Cache-Control" content="no-cache")
         meta(http-equiv="Cache-Control" content="max-age=0")
         meta(name="HandheldFriendly" content="true")
-        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="viewport" content="width=320.1, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
         link(rel='stylesheet',href="/stylesheets/activity/activity-gather.css")
         script(src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js")
     body
         .gather-container
+            .activity-guize-modal
+                .activity-modal-content
+                        h1 友情提示
+                        p
+                            span 1．</span>对每一次户外活动，都不可以轻视，如果以为自己经验丰富而不做好充足的准备，那往往会吃苦头的。出发前要做好准备工作，一方面，要收集好本次户外活动路线尽可能详细的资料，对可能遇到的各种问题做好心理和物质准备，另一方面，也要做好身体上的准备，确保自己的体能和身体状况适合参加相应的户外活动。
+                        p
+                            span 2．</span>出发时，要将这次活动准备走的路线、参加人员、预计结束时间等信息告诉亲友，以在万一发生意外时，援救人员能获得有帮助的信息。
+                        p
+                            span 3．</span>要强调团队精神，整个队伍应该保持首尾都能联系的状况，不要因为自己体能好就丢下大队伍自己跑，如果有能力的话，去帮助收尾，更能体现一个人的能力和品格。记住，不抛弃不放弃，也是户外运动的真正精神。
+                        p
+                            span 4．</span>登山或徒步中，不要与其他队员的距离太远，要不时前后呼应，不要单独行动。服从领队的领导，行动统一，才能集体应对各种突发事件。避免在灌木丛中、有落石、雪崩的地区行走。在山地行进，应力求有道路不穿林翻山，有大路不走小路。力求走梁不走沟，走纵不走横。雨季在山地行进，应尽量避开低洼地，以防山洪和塌方。如遇雷雨，应立即到附近的低洼地或稠密的灌木丛去，不要躲在高大的树下。在山地如遇风雪、浓雾、强风等恶劣天气，应停止行进，躲避在山崖下或山洞里，待气候好转时再走。牢记户外安全原则，尽量不走夜路。
+                        p
+                            span 5．</span>露营时应尽量在坚硬、平坦、干燥的地上搭帐篷，帐篷的入口要背风，帐篷面最好朝南或东南面能够看到清晨的阳光，确保阳光充足；营地尽量不要搭建在棱脊或山顶上，不要在溪谷、河岸和干涸的河床上扎营；同时，帐篷要远离有滚石的山坡，避免在崖岸下、枯木下、大树下搭帐篷；为保证宿营时不受潮湿侵扰之苦，最好是选择沙地或岩屑地等排水好的地方扎营，尽量不要在草地上搭建帐篷。
+            a(href="/activity" style="appearance:none;")
+                p(style="text-align:center; color: white; display: inline-block; margin-top: 6px; margin-left: 4px;")
+                    img(src="/images/activity/back-to-home.png" style="width: 30px;")
             a(href="/activity/launch")
-                p 召集令
+                p(style="text-align:center; color: white; display: inline-block; float: right; margin-top: 6px; margin-right: 4px;")
+                    img(src="/images/activity/fabu.png" style="width: 30px;")
+            .activity-list-top-container
+                .activity-list-top-items.first
+                    img(src="/images/activity/activity-introduction.jpg")
+                .activity-list-top-items.second
+                    p 拉上小伙伴一起冒险吧
+                    p(style="position: absolute; bottom: 30px; font-size: 14px;") 绿野君有话说&nbsp;&nbsp;
+                        img.info(src="/images/activity/info_btn.png" style="width: 14px;" align="top")
+            .total(style="display: none")=total
+            each val,index in activityList
+                .activity-list-container(data-id=val.activity_id)
+                    .activity-list-items=val.limit
+                    .activity-list-items
+                        if (val.type == 0)
+                            p.type
+                                img(src="/images/activity/type1.png")
+                        p.activity-title=val.activity_title
+                        p.gather-information=val.gather_place
+                        p.launcher <span style="color: dark">#{val.launcher_name}</span> 发布于 #{val.date.toLocaleString()}
+        p.noData(style="display: none; text-align: center; font-size: 15px; margin-top: 10px; margin-bottom: 10px;") 到底啦...
+    script(src="/javascripts/activity/activity-gather.js")
     script.
+        $(function() {
+            $('.info').click(function() {
+                $('.activity-guize-modal').show();
+            })
+            $('.activity-guize-modal').click(function() {
+                $(this).hide();
+            })
+            $('.activity-modal-content').click(function(e) {
+                e.stopPropagation();
+            })
+        })
 
 

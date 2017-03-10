@@ -25,6 +25,7 @@
     "fetch":"latest",
     "ueditor": "^1.0.0",
     "busboy":"latest",
-    "log4js":"latest"
+    "log4js":"latest",
+    "amqplib":"latest"
   }
 }
