@@ -123,4 +123,14 @@ exports.dao = {
             })
         })
     },
+    cancelActivity: (id) => {
+        return new Promise((resolve, reject) => {
+            Activity.remove({activity_id: id}, (err, docs) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(docs.length);
+            })
+        })
+    },
 };

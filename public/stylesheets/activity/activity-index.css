@@ -110,6 +110,9 @@ figure span {
     top: 10px;
     width: 32.2%;
     font-size: 14px;
+    /*transition: left, top 1s ease;*/
+    /*transition-property: left, top;*/
+    /*transition-duration: 1s;*/
 }
 .article-list-item p{
     position: absolute;

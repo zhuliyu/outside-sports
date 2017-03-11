@@ -14,7 +14,7 @@ $(function() {
             let mix = Math.min.apply(null, arr);
             let index = findIndex(mix, arr);
             let left = items_width*index+index*5;
-            items.eq(j).css({'left': left, 'top': arr[index]});
+            items.eq(j).css({'left': left, 'top': arr[index]}, 500);
             let height = parseFloat(items.eq(j).css('top')) + items.eq(j).height()+5;
             arr[index] = height;
         }

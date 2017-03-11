@@ -1,7 +1,7 @@
 /**
  * Created by e on 17/2/26.
  */
-const config = require('../../config/development')
+const config = require('../../config/development');
 const options = {
     host: config.mysql.host,
     port: config.mysql.port,

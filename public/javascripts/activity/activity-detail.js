@@ -39,6 +39,14 @@ $('#exit').click(function() {
     }
 });
 
+/*令主删除活动*/
+$('#delete').click(function() {
+    let flag = confirm('确定要撤销本次活动?别忘了和参与者打个招呼哦~');
+    if (flag) {
+        cancel(params);
+    }
+});
+
 $('.close').click(function() {
     $('.activity-join-modal').hide();
 });
@@ -99,4 +107,30 @@ function exit_activity(params) {
     .catch((e) => {
         alert('网络异常,请重试');
     })
+}
+
+function cancel(params) {
+    fetch('/activity/join/cancel', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(params),
+    })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            if (data.result == 1) {
+                alert('删除成功');
+                location.href = '/activity/gather';
+            } else {
+                alert('网络异常,请刷新后重试~');
+                location.href= window.location;
+            }
+        })
+        .catch((e) => {
+            alert('网络异常,请重试');
+        })
 }

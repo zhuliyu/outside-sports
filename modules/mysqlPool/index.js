@@ -12,9 +12,10 @@ function connectMysql() {
     return new Promise((resolve, reject) => {
         mysqlPool.getConnection((err, client) => {
             if (err) {
-                reject(err);
                 setTimeout(connectMysql, 2000);
+                reject(err);
             }
+            console.log('mysql连接成功');
             resolve(client);
         })
     })

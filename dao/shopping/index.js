@@ -5,7 +5,7 @@ const mysql = require('mysql');
 const mysqlPool = require('../../modules/mysqlPool');
 const Promise = require('promise');
 
-exports.shoppingDao = {
+module.exports = {
     //模板
     get_information: function* () {
         const sql = 'select * from users';

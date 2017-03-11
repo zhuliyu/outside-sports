@@ -4,7 +4,7 @@
 }
 body {
     background-color: #4e5e6b;
-    color: white;
+    /*color: white;*/
     padding-top: 10px;
 }
 .bike {
@@ -23,6 +23,7 @@ body {
     }
 }
 .item {
+    color: white;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -82,8 +83,9 @@ body {
     margin-bottom: 0px ! important;
 }
 .activity-content{
-    background-color: white;
-    color: black;
+    /*background-color: #ffc0ff;*/
+    color: white;
+    /*color: black;*/
 }
 .activity-join-modal {
     position: fixed;

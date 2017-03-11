@@ -4,12 +4,13 @@
 const express = require('express');
 const router = express.Router();
 const dao  =require('../../../dao/activity');
+const mysql_dao = require('../../../dao/shopping');
 
 /*活动详情以及报名页面*/
 router.get('/', (req, res) => {
     //当前用户的openId
-    const openId = 'OXsos1234';
-    req.session.openId = openId;
+    const openId = 'OXsoslkslskls';
+    console.log(req.session.openId);
     const { id } = req.query;
     if (!id) {
         res.render('activity/youji/error', {title: '错误'});
@@ -57,7 +58,7 @@ router.post('/leastNum', (req, res) => {
 router.post('/exit', (req, res) => {
     const { logger } = req;
     if (!req.body._id) {
-        res.redirect('/activity/join/fail');
+        res.json({result: 0});
     }
     dao.dao.exitActivity(req.body._id)
         .then((data) => {
@@ -67,6 +68,19 @@ router.post('/exit', (req, res) => {
             (err) => {
                 res.json({result: 0})
             })
+});
+/*删除活动*/
+router.post('/cancel', (req, res) => {
+    if (!req.body.activity_id) {
+        res.json({result: 0});
+    }
+    dao.dao.cancelActivity(req.body.activity_id)
+    .then((data) => {
+        res.json({result: 1});
+    },
+        (err) => {
+            res.json({result: 0});
+        })
 });
 router.get('/success', (req, res) => {
     res.render('activity/main_activity/success', {title: '报名成功'});

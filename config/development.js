@@ -21,7 +21,7 @@ module.exports={
     },
     mongo: 'mongodb://127.0.0.1:27017/outside-sports',
     mysql: {
-        host: '192.168.1.8',
+        host: '192.168.1.100',
         port: '3306',
     }
 }
