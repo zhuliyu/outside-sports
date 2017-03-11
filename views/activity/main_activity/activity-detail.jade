@@ -38,7 +38,6 @@ html
                 img(src="/images/youji/cover.jpg")
             p.least-num.item 剩余名额:&nbsp;&nbsp; <span class="leastNum" style="color: white; font-size: 18px;">0</span>
             p.total-num.item(style="display: none;")=detail.limit
-            p.openId.item(style="display: none;")=openId
             p.activity-introduction.item(style="display: none;")=openId
             p.endDate.item 报名截止时间: 2017-03-14
             p.open_info.item 查看活动说明<br/>
@@ -52,7 +51,7 @@ html
                         input#delete.operate-btn(type="button" value="撤销活动")
                     else
                         if (join == 1)
-                            input#exit.operate-btn(type="button" value="退出活动")
+                            input#exit.operate-btn(type="button" value="退出活动" data-object=object_id)
                         else
                             input#join.operate-btn(type="button" value="揭竿而起")
         script(src="/javascripts/activity/activity-detail.js")

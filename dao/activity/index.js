@@ -88,11 +88,7 @@ exports.dao = {
                 if (err) {
                     reject(err);
                 }
-                if (docs.length == 0) {
-                    resolve(0);
-                } else {
-                    resolve(1);
-                }
+                resolve(docs);
             })
         })
     },
@@ -114,6 +110,16 @@ exports.dao = {
                     reject(err);
                 }
                 resolve(docs.length);
+            })
+        })
+    },
+    exitActivity: (object_id) => {
+        return new Promise((resolve, reject) => {
+            Activity_assign.remove({_id: object_id.split('"')[1]}, (err, docs) => {
+                if (err) {
+                    reject(err);
+                }
+                resolve(docs);
             })
         })
     },

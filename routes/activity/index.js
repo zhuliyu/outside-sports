@@ -89,53 +89,6 @@ router.post('/launch', (req, res) => {
 
         })
 });
-/*活动详情以及报名页面*/
-router.get('/join', (req, res) => {
-    //当前用户的openId
-    const openId = 'OXsos1234';
-    const { id } = req.query;
-    if (!id) {
-        res.render('activity/youji/error', {title: '错误'});
-    }
-    Promise.all([dao.dao.getActivityById(id), dao.dao.getWhetherJoin(openId, id)])
-    .then((data) => {
-            res.render('activity/main_activity/activity-detail', {title: '活动报名', detail: data[0][0], openId: openId, join: data[1]});
-    },
-        (err) => {
-            res.render('activity/youji/error', {title: '错误'});
-        })
-});
-/*活动报名 表单提交方式*/
-router.post('/join', (req, res) => {
-    const { join_telephone, join_openId, activity_id } = req.body;
-    if (!join_telephone || !join_openId || !activity_id ) {
-        res.redirect('/activity/join/error');
-    }
-    dao.dao.join(req.body)
-    .then((data) => {
-            res.redirect('/activity/join/success');
-    },
-        (err) => {
-            res.redirect('/activity/join/fail');
-        });
-});
-/*查询剩余报名额度*/
-router.post('/join/leastNum', (req, res) => {
-    console.log(req.body.activity_id);
-    dao.dao.getJoinNum(req.body.activity_id)
-    .then((data) => {
-        res.json({result: 1, total: data})
-    },
-        (err) => {
-            res.json({result: 0})
-        })
-});
 
-router.get('/join/success', (req, res) => {
-    res.render('activity/main_activity/success', {title: '报名成功'});
-});
-router.get('/join/fail', (req, res) => {
-    res.render('activity/main_activity/fail', {title: '报名失败'});
-});
 
 module.exports = router;
