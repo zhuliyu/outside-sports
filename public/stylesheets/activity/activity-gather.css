@@ -47,7 +47,7 @@ h1{
 }
 .activity-list-top-container {
     width: 90%;
-    height: 120px;
+    /*height: 120px;*/
     margin: auto;
     display: flex;
     flex-direction: row;
