@@ -9,7 +9,8 @@ const mysql_dao = require('../../../dao/shopping');
 /*活动详情以及报名页面*/
 router.get('/', (req, res) => {
     //当前用户的openId
-    const openId = 'OXsoslkslskls';
+    const openId = 'OXsoslkslskls1';
+    req.session.openId = openId;
     console.log(req.session.openId);
     const { id } = req.query;
     if (!id) {

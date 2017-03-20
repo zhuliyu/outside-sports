@@ -44,7 +44,9 @@ html
                 img(src="/images/activity/arrow_down.png" style="width: 15px;")
             .activity-content(style="display: none; margin-top: 40px;" data-info=detail.activity_introduction)
             p.join-btn-container(style="text-align: center" data-id=detail.activity_id)
-                if ((new Date()) > (new Date(detail.end_date)))
+                if (detail.status)
+                    input.operate-btn.doing(type="button" value="活动已结束")
+                else if ((new Date()) > (new Date(detail.end_date)))
                     input.operate-btn.doing(type="button" value="进行中")
                 else
                     if (detail.launcher_openId == openId)
@@ -53,7 +55,7 @@ html
                         if (join == 1)
                             input#exit.operate-btn(type="button" value="退出活动" data-object=object_id)
                         else
-                            input#join.operate-btn(type="button" value="揭竿而起")
+                            input#join.operate-btn(type="button" value="我要报名")
         script(src="/javascripts/activity/activity-detail.js")
 
 

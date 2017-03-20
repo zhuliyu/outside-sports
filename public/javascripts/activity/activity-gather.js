@@ -26,7 +26,16 @@ $(function () {
     $('.gather-container').on('click', '.activity-list-container', function() {
         const id = $(this)[0].dataset.id;
         location.href = `/activity/join?id=${id}`;
-    })
+    });
+    //$('#moveLink').bind('touchmove',function(e){
+    //    e.preventDefault();
+    //    var touch = e.originalEvent.touches[0] || e.originalEvent.changedTouches[0];
+    //    var elm = $(this).offset();
+    //    var x = touch.pageX - elm.left/2;
+    //    var y = touch.pageY - elm.top/2;
+    //    $(this).css('left', x+'px');
+    //    $(this).css('top', y+'px');
+    //});
 });
 function doPost(params) {
     fetch('/activity/gather', {

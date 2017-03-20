@@ -88,6 +88,7 @@ exports.dao = {
                 if (err) {
                     reject(err);
                 }
+                console.log(docs);
                 resolve(docs);
             })
         })
